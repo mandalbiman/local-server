@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"bats.com/local-server/api/handlers"
-
+	"bats.com/local-server/io/db"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/log"
 	"github.com/gofiber/fiber/v2/middleware/cors"
@@ -18,16 +18,28 @@ import (
 
 func main() {
 	args := os.Args
-	if len(args) > 2 {
-		fmt.Println(args)
+	userDB := db.GetUserDB()
+
+	// If "refresh" is passed, load JSON data into SQLite
+	if len(args) > 1 && args[1] == "refresh" {
+		fmt.Println("Refreshing database from JSON...")
+		if err := userDB.LoadUsersFromJSON("sample/users/users.json"); err != nil {
+			fmt.Printf("Failed to load users: %v\n", err)
+			return
+		}
+		fmt.Println("Database refreshed successfully.")
+		return // exit after refresh
 	}
-	fiberApp := newFiberApp()
-	setUpRoutes(fiberApp)
-	listener, port := getListener(9090)
+
+	// Otherwise, start Fiber app
+	fiberApp := newFiberApp() // your Fiber app setup
+	setUpRoutes(fiberApp)     // register routes
+
+	listener, port := getListener(9090) // custom listener logic
 	fmt.Printf("Server listening on port http://[::]:%d\n", port)
-	err := fiberApp.Listener(listener)
-	if err != nil {
-		log.Error(err)
+
+	if err := fiberApp.Listener(listener); err != nil {
+		fmt.Printf("Error starting server: %v\n", err)
 		return
 	}
 }
@@ -66,8 +78,9 @@ func newFiberApp() *fiber.App {
 
 func setUpRoutes(app *fiber.App) {
 	v1 := app.Group("/api/v1")
-	handlers.SetUpQuotesRoutes(v1)
 	v1.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("Hello World")
 	})
+	handlers.SetUpQuotesRoutes(v1)
+	handlers.SetUpUserRoutes(v1)
 }

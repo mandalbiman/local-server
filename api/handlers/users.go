@@ -1,7 +1,9 @@
 package handlers
 
 import (
+	"fmt"
 	"strconv"
+	"time"
 
 	"bats.com/local-server/api/models"
 	"bats.com/local-server/io/db"
@@ -19,6 +21,9 @@ func SetUpUserRoutes(v1 fiber.Router) {
 	userGrp.Get("/", uh.getUsers)
 	userGrp.Get("/:id", uh.getUserById)
 	userGrp.Put("/:id", uh.updateUser)
+	userGrp.Post("/", uh.createUser)
+	userGrp.Delete("/:id", uh.deleteUser)
+	userGrp.Get("/search/:username", uh.searchUser)
 }
 
 func (u UsersHandler) getUsers(c *fiber.Ctx) error {
@@ -92,4 +97,69 @@ func (u UsersHandler) updateUser(c *fiber.Ctx) error {
 	}
 
 	return c.JSON(existingUser)
+}
+
+func (u UsersHandler) deleteUser(c *fiber.Ctx) error {
+	// Parse ID
+	idParam := c.Params("id")
+	id, err := strconv.Atoi(idParam)
+	if err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "Invalid user ID",
+		})
+	}
+
+	// Delete user
+	user, err := u.db.DeleteUser(id)
+	if err != nil {
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+			"error": "User not found",
+		})
+	}
+
+	return c.JSON(fiber.Map{
+		"message": fmt.Sprintf("User %s deleted successfully", user.Username),
+	})
+}
+
+func (u UsersHandler) searchUser(c *fiber.Ctx) error {
+	username := c.Params("username")
+	user, err := u.db.SearchUserByUsername(username)
+	if err != nil {
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+			"error": "User not found",
+		})
+	}
+
+	return c.JSON(user)
+}
+
+func (u UsersHandler) createUser(c *fiber.Ctx) error {
+	// Parse request body
+	var newUser models.User
+	if err := c.BodyParser(&newUser); err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "Invalid request body",
+		})
+	}
+
+	// Optional: basic validation
+	if newUser.Username == "" || newUser.Email == "" || newUser.Password == "" {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "Username, email, and password are required",
+		})
+	}
+
+	// Set creation timestamp
+	newUser.CreatedAt = time.Now()
+
+	// Save to DB
+	createdUser, err := u.db.CreateUser(newUser)
+	if err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": "Failed to create user",
+		})
+	}
+
+	return c.Status(fiber.StatusCreated).JSON(createdUser)
 }

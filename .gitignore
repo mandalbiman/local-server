@@ -28,3 +28,7 @@ go.work.sum
 build/
 .idea/
 
+*.db
+bin/
+tmp/
+
