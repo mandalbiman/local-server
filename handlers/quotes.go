@@ -33,7 +33,7 @@ func SetUpQuotesRoutes(v1 fiber.Router) {
 
 type Quote struct {
 	ID     int    `json:"id"`
-	quote  string `json:"quote"`
+	Quote  string `json:"quote"`
 	Author string `json:"author"`
 }
 
@@ -63,7 +63,7 @@ func getQuoteById(c *fiber.Ctx) error {
 
 	return c.JSON(fiber.Map{
 		"id":      selected.ID,
-		"quote":   selected.quote,
+		"quote":   selected.Quote,
 		"author":  selected.Author,
 		"bgImage": bg,
 	})
