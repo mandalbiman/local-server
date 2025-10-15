@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
-	"local-server/handlers"
 	"net"
+	"os"
+
+	"bats.com/local-server/api/handlers"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/log"
@@ -15,10 +17,14 @@ import (
 )
 
 func main() {
+	args := os.Args
+	if len(args) > 2 {
+		fmt.Println(args)
+	}
 	fiberApp := newFiberApp()
 	setUpRoutes(fiberApp)
 	listener, port := getListener(9090)
-	fmt.Printf("Listening on port %d\n", port)
+	fmt.Printf("Server listening on port http://[::]:%d\n", port)
 	err := fiberApp.Listener(listener)
 	if err != nil {
 		log.Error(err)

@@ -7,10 +7,12 @@ import (
 	"math/rand"
 	"os"
 
+	"bats.com/local-server/api/models"
+
 	"github.com/gofiber/fiber/v2"
 )
 
-var quotes = []Quote{}
+var quotes = []models.Quote{}
 
 var backgroundImages = []string{
 	"https://picsum.photos/seed/1/800/600",
@@ -31,19 +33,13 @@ func SetUpQuotesRoutes(v1 fiber.Router) {
 	quoteGrp.Get("/", getQuotes)
 }
 
-type Quote struct {
-	ID     int    `json:"id"`
-	Quote  string `json:"quote"`
-	Author string `json:"author"`
-}
-
 func getQuotes(c *fiber.Ctx) error {
 	return c.JSON(quotes)
 }
 
 func getQuoteById(c *fiber.Ctx) error {
 	idParam := c.Params("id")
-	var selected *Quote
+	var selected *models.Quote
 	for _, q := range quotes {
 		if fmt.Sprintf("%d", q.ID) == idParam {
 			selected = &q
@@ -69,13 +65,13 @@ func getQuoteById(c *fiber.Ctx) error {
 	})
 }
 
-func loadQuotes(filename string) ([]Quote, error) {
+func loadQuotes(filename string) ([]models.Quote, error) {
 	data, err := os.ReadFile(filename)
 	if err != nil {
 		return nil, err
 	}
 
-	var quotes []Quote
+	var quotes []models.Quote
 	if err := json.Unmarshal(data, &quotes); err != nil {
 		return nil, err
 	}
