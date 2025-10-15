@@ -1,0 +1,252 @@
+[
+  {
+    "id": 1,
+    "quote": "Life is what happens when you're busy making other plans.",
+    "author": "John Lennon"
+  },
+  {
+    "id": 2,
+    "quote": "Be yourself; everyone else is already taken.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "id": 3,
+    "quote": "In three words I can sum up everything I've learned about life: it goes on.",
+    "author": "Robert Frost"
+  },
+  {
+    "id": 4,
+    "quote": "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 5,
+    "quote": "If you tell the truth, you don't have to remember anything.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 6,
+    "quote": "A friend is someone who knows all about you and still loves you.",
+    "author": "Elbert Hubbard"
+  },
+  {
+    "id": 7,
+    "quote": "Don't cry because it's over, smile because it happened.",
+    "author": "Dr. Seuss"
+  },
+  {
+    "id": 8,
+    "quote": "Be the change that you wish to see in the world.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "id": 9,
+    "quote": "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 10,
+    "quote": "So many books, so little time.",
+    "author": "Frank Zappa"
+  },
+  {
+    "id": 11,
+    "quote": "A room without books is like a body without a soul.",
+    "author": "Marcus Tullius Cicero"
+  },
+  {
+    "id": 12,
+    "quote": "You only live once, but if you do it right, once is enough.",
+    "author": "Mae West"
+  },
+  {
+    "id": 13,
+    "quote": "Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.",
+    "author": "Bernard M. Baruch"
+  },
+  {
+    "id": 14,
+    "quote": "You know you're in love when you can't fall asleep because reality is finally better than your dreams.",
+    "author": "Dr. Seuss"
+  },
+  {
+    "id": 15,
+    "quote": "You have as much laughter as you have faith.",
+    "author": "Martin Luther King Jr."
+  },
+  {
+    "id": 16,
+    "quote": "Without music, life would be a mistake.",
+    "author": "Friedrich Nietzsche"
+  },
+  {
+    "id": 17,
+    "quote": "I am so clever that sometimes I don't understand a single word of what I am saying.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "id": 18,
+    "quote": "Always forgive your enemies; nothing annoys them so much.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "id": 19,
+    "quote": "The only way to do great work is to love what you do.",
+    "author": "Steve Jobs"
+  },
+  {
+    "id": 20,
+    "quote": "If you judge people, you have no time to love them.",
+    "author": "Mother Teresa"
+  },
+  {
+    "id": 21,
+    "quote": "The truth will set you free, but first it will piss you off.",
+    "author": "Gloria Steinem"
+  },
+  {
+    "id": 22,
+    "quote": "A day without sunshine is like, you know, night.",
+    "author": "Steve Martin"
+  },
+  {
+    "id": 23,
+    "quote": "I am not young enough to know everything.",
+    "author": "J.M. Barrie"
+  },
+  {
+    "id": 24,
+    "quote": "You can never get a cup of tea large enough or a book long enough to suit me.",
+    "author": "C.S. Lewis"
+  },
+  {
+    "id": 25,
+    "quote": "I am not afraid of tomorrow, for I have seen yesterday and I love today.",
+    "author": "William Allen White"
+  },
+  {
+    "id": 26,
+    "quote": "The only impossible journey is the one you never begin.",
+    "author": "Tony Robbins"
+  },
+  {
+    "id": 27,
+    "quote": "Life is really simple, but we insist on making it complicated.",
+    "author": "Confucius"
+  },
+  {
+    "id": 28,
+    "quote": "It is never too late to be what you might have been.",
+    "author": "George Eliot"
+  },
+  {
+    "id": 29,
+    "quote": "The best way to predict the future is to create it.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 30,
+    "quote": "You miss 100% of the shots you don't take.",
+    "author": "Wayne Gretzky"
+  },
+  {
+    "id": 31,
+    "quote": "I find that the harder I work, the more luck I seem to have.",
+    "author": "Thomas Jefferson"
+  },
+  {
+    "id": 32,
+    "quote": "It does not matter how slowly you go as long as you do not stop.",
+    "author": "Confucius"
+  },
+  {
+    "id": 33,
+    "quote": "Everything you can imagine is real.",
+    "author": "Pablo Picasso"
+  },
+  {
+    "id": 34,
+    "quote": "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 35,
+    "quote": "You can't use up creativity. The more you use, the more you have.",
+    "author": "Maya Angelou"
+  },
+  {
+    "id": 36,
+    "quote": "Life is 10% what happens to us and 90% how we react to it.",
+    "author": "Charles R. Swindoll"
+  },
+  {
+    "id": 37,
+    "quote": "The only limit to our realization of tomorrow is our doubts of today.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 38,
+    "quote": "It always seems impossible until it's done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 39,
+    "quote": "Do not go where the path may lead, go instead where there is no path and leave a trail.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 40,
+    "quote": "The only thing necessary for the triumph of evil is for good men to do nothing.",
+    "author": "Edmund Burke"
+  },
+  {
+    "id": 41,
+    "quote": "The best and most beautiful things in the world cannot be seen or even touched—they must be felt with the heart.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 42,
+    "quote": "It is during our darkest moments that we must focus to see the light.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 43,
+    "quote": "Whoever is happy will make others happy too.",
+    "author": "Anne Frank"
+  },
+  {
+    "id": 44,
+    "quote": "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.",
+    "author": "Buddha"
+  },
+  {
+    "id": 45,
+    "quote": "Life is either a daring adventure or nothing at all.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 46,
+    "quote": "The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 47,
+    "quote": "Life isn’t about finding yourself. Life is about creating yourself.",
+    "author": "George Bernard Shaw"
+  },
+  {
+    "id": 48,
+    "quote": "Life is what we make it, always has been, always will be.",
+    "author": "Grandma Moses"
+  },
+  {
+    "id": 49,
+    "quote": "Good friends, good books, and a sleepy conscience: this is the ideal life.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 50,
+    "quote": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "author": "Nelson Mandela"
+  }
+]
