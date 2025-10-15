@@ -24,6 +24,7 @@ func GetUserDB() *UserDB {
 func setUpDB() *gorm.DB {
 	db, err := gorm.Open(sqlite.Open("users.db"), &gorm.Config{})
 	if err != nil {
+		fmt.Println(err)
 		panic("failed to connect database")
 	}
 	return db
