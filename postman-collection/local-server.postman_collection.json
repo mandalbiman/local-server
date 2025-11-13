@@ -242,6 +242,33 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "fertilizers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-F-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{server}}:{{port}}/api/v1/fertilizers",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"fertilizers"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"variable": [
@@ -252,6 +279,11 @@
 		},
 		{
 			"key": "port",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "token",
 			"value": "",
 			"type": "default"
 		}
