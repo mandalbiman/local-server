@@ -9,6 +9,7 @@ import (
 	"bats.com/local-server/io/db"
 	"bats.com/local-server/middleware"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/log"
 )
 
 type FertilizerHandler struct {
@@ -140,6 +141,7 @@ func (u FertilizerHandler) createFertilizer(c *fiber.Ctx) error {
 	// Parse request body
 	var newFertilizer models.Fertilizer
 	if err := c.BodyParser(&newFertilizer); err != nil {
+		log.Error(err)
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"error": "Invalid request body",
 		})

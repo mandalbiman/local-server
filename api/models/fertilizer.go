@@ -3,18 +3,18 @@ package models
 import "time"
 
 type Fertilizer struct {
-	ID                uint `gorm:"primaryKey"`
-	ProductName       string
-	Category          string
-	Dosage            string
-	UniqueID          string
-	BatchNumber       string
-	ManufactureDate   time.Time
-	ExpiryDate        time.Time
-	CautionaryLogo    string
-	CautionaryText    string
-	AntidoteStatement string
-	CreatedAt         time.Time
+	ID                uint      `gorm:"primaryKey" json:"id"`
+	ProductName       string    `json:"productName"`
+	Category          string    `json:"category"`
+	Dosage            string    `json:"dosage"`
+	UniqueID          string    `json:"uniqueID"`
+	BatchNumber       string    `json:"batchNumber"`
+	ManufactureDate   time.Time `json:"manufactureDate"`
+	ExpiryDate        time.Time `json:"expiryDate"`
+	CautionaryLogo    string    `json:"cautionaryLogo"`
+	CautionaryText    string    `json:"cautionaryText"`
+	AntidoteStatement string    `json:"antidoteStatement"`
+	CreatedAt         time.Time `json:"createdAt"`
 }
 
 // Used only for JSON import
